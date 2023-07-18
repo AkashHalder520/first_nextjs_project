@@ -1,4 +1,4 @@
-// File: E:\first_nextjs_project\src\app\Movie\page.js
+// File: E:\first_nextjs_project\src\app\Movie\page.jsx
 import * as entry from '../../../../src/app/Movie/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

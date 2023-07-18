@@ -2,5 +2,6 @@
   "/page": "app/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/Movie/page": "app/Movie/page.js",
-  "/Contact/page": "app/Contact/page.js"
+  "/About/page": "app/About/page.js",
+  "/Movie/[id]/page": "app/Movie/[id]/page.js"
 }
