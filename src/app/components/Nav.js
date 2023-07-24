@@ -18,6 +18,9 @@ export default function Nav() {
                     <li className={styles.navbarItem}>
                         <Link className={styles.navbarLink} href="/Contact">Contact</Link>
                     </li>
+                    <li className={styles.navbarItem}>
+                        <Link className={styles.navbarLink} href="/login">login</Link>
+                    </li>
                 </ul>
             </div>
 

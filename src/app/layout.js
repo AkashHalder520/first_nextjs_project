@@ -1,6 +1,8 @@
+import { Suspense } from 'react'
 import Header from './components/Header'
 import './globals.css'
 import { Mulish, Roboto } from 'next/font/google'
+import Loading from './loading'
 
 // const inter = Inter({ subsets: ['latin'] })
 const mulish = Mulish({
@@ -19,6 +21,7 @@ export default function RootLayout({ children }) {
       
       <body className={mulish.className}>
       <Header/>
+      <Suspense fallback={<Loading/>}/>
         {children}
         
         </body>
