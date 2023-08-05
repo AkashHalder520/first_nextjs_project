@@ -7,9 +7,12 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import Link from 'next/link';
+import { login } from '@/Redux/Authslice';
+import { useDispatch } from 'react-redux';
 
 export default function page() {
   const [showPassword, setShowPassword] = useState(false)
+  const dispatch=useDispatch()
   const [user, setUser] = useState({
     email: "",
     password: ""
@@ -58,7 +61,16 @@ export default function page() {
   const handleClickShowPassword = () => {
     setShowPassword((show) => !show)
   }
-
+const handleSubmit=(e)=>{
+  e.preventDefault()
+setError(validation())
+const formData = {
+  email: user.email,
+  password: user.password
+}
+console.log(formData);
+dispatch(login(formData))
+}
 
   const paperstyle = { padding: 20, height: '70vh', width: '50vh', margin: '20% auto' }
   return (
@@ -98,7 +110,7 @@ export default function page() {
             />
 
           </FormControl>
-          <Button variant="contained" sx={{ margin: '10%', fontSize: 'large' }} color="primary" type='submit'>
+          <Button variant="contained" sx={{ margin: '10%', fontSize: 'large' }} color="primary" type='submit' onClick={handleSubmit}>
             Submit
           </Button>
           <Typography >

@@ -1,8 +1,11 @@
+'use client'
 import { Suspense } from 'react'
 import Header from './components/Header'
 import './globals.css'
 import { Mulish, Roboto } from 'next/font/google'
 import Loading from './loading'
+import { Provider } from 'react-redux'
+import { store } from '@/Redux/Store'
 
 // const inter = Inter({ subsets: ['latin'] })
 const mulish = Mulish({
@@ -20,10 +23,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       
       <body className={mulish.className}>
+      
       <Header/>
       <Suspense fallback={<Loading/>}/>
+      <Provider store={store}>
         {children}
-        
+        </Provider>
         </body>
     </html>
   )
